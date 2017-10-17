@@ -12,9 +12,9 @@ const PRIMES = [
  * 
  */
 const SWITCH_NAMES = [
-    'switch.switch',
-    'switch.switch_2',
-    'switch.switch_3',
+    "switch.aeon_labs_unknown_type0103_id0060_switch_2",
+    "switch.aeon_labs_unknown_type0103_id0060_switch_3",
+    "switch.aeon_labs_unknown_type0103_id0060_switch_4",
 ];
 
 
@@ -31,7 +31,7 @@ const HEADERS = {
  */
 let baseOptions = {
     method: 'POST',
-    url: 'http://192.168.0.106:8123/api/services/switch/toggle',
+    url: 'http://localhost:8123/api/services/switch/toggle',
     headers: HEADERS,
     json: true
 }
@@ -47,7 +47,7 @@ function Flicker(switchName) {
 
     let privateApi = {
         randomWaitTime: function() {
-            return PRIMES[Math.floor(Math.random()*PRIMES.length)] * 1000;
+            return PRIMES[Math.floor(Math.random()*PRIMES.length)] * 500;
         }
     }
 
@@ -56,7 +56,7 @@ function Flicker(switchName) {
         turnOn: function() {
             let opts = {
                 method: 'POST',
-                url: 'http://192.168.0.106:8123/api/services/switch/turn_on',
+                url: 'http://localhost:8123/api/services/switch/turn_on',
                 headers: HEADERS,
                 json: true,
                 body: {
@@ -83,7 +83,7 @@ function Flicker(switchName) {
         turnOff: function() {
             let opts = {
                 method: 'POST',
-                url: 'http://192.168.0.106:8123/api/services/switch/turn_off',
+                url: 'http://localhost:8123/api/services/switch/turn_off',
                 headers: HEADERS,
                 json: true,
                 body: {
